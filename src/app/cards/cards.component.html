@@ -1,0 +1,36 @@
+<div class="container d-flex flex-reverse">
+  <button (click)="ChangePage()" #prev class="btn btn-primary">Anterior </button>
+  <button (click)="ChangePage()" id="next" class="btn btn-primary">Siguiente</button>
+</div>
+
+
+
+@defer(on viewport){
+
+  <div class="container d-flex flex-wrap justify-content-between">
+    @for ( d of datos; track d.id){
+
+  <div class="card" style="width: 18rem">
+    <img src="{{ d.image }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><h2>{{ d.name }}</h2></h5>
+      <p class="card-text">Genero: {{ d.gender }}</p>
+      <p class="card-text">Especie: {{ d.species }}</p>
+      <p class="card-text">Tipo: {{ d.type }}</p>
+      <p class="card-text">Origen: {{ d.origin.name }}</p>
+      <p class="card-text">Ubicacion: {{ d.location.name }}</p>
+      <p class="card-text">Episodios: {{ d.episode.length }}
+      <button class="btn btn-primary" (click)="ver(d.episode)">Ver</button></p>
+      <p class="card-text">Creado: {{ d.created }}</p>
+    </div>
+  </div>
+  
+}
+</div>
+
+}@placeholder {
+  <p>No hay datos</p>
+}
+@loading (minimum 1000ms) {
+  <p>Cargando...</p>
+}
