@@ -1,5 +1,5 @@
-<div class="container d-flex flex-reverse">
-  <button (click)="ChangePage()" #prev class="btn btn-primary">Anterior </button>
+<div class="container d-flex flex-reverse justify-content-around bg-light">
+  <button (click)="ChangePage()" #prev class="btn btn-primary fas fa-angle-left">Anterior </button>
   <button (click)="ChangePage()" id="next" class="btn btn-primary">Siguiente</button>
 </div>
 
@@ -10,18 +10,18 @@
   <div class="container d-flex flex-wrap justify-content-between">
     @for ( d of datos; track d.id){
 
-  <div class="card" style="width: 18rem">
+  <div class="card" style="width: 15rem; margin: 10px">
     <img src="{{ d.image }}" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title"><h2>{{ d.name }}</h2></h5>
-      <p class="card-text">Genero: {{ d.gender }}</p>
-      <p class="card-text">Especie: {{ d.species }}</p>
-      <p class="card-text">Tipo: {{ d.type }}</p>
-      <p class="card-text">Origen: {{ d.origin.name }}</p>
-      <p class="card-text">Ubicacion: {{ d.location.name }}</p>
-      <p class="card-text">Episodios: {{ d.episode.length }}
+      <p class="card-text"><b>Genero:</b> {{ d.gender }}</p>
+      <p class="card-text"><b>Especie:</b> {{ d.species }}</p>
+      <p class="card-text"><b>Tipo:</b> {{ d.type }}</p>
+      <p class="card-text"><b>Origen:</b> {{ d.origin.name }}</p>
+      <p class="card-text"><b>Ubicacion:</b> {{ d.location.name }}</p>
+      <p class="card-text"><b>Episodios:</b> {{ d.episode.length }}
       <button class="btn btn-primary" (click)="ver(d.episode)">Ver</button></p>
-      <p class="card-text">Creado: {{ d.created }}</p>
+      <p class="card-text"><b>Creado:</b> {{ d.created }}</p>
     </div>
   </div>
   

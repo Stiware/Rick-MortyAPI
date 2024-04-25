@@ -11,5 +11,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'rick-morty-api';
+  title = 'Rick & Morty';
 }
